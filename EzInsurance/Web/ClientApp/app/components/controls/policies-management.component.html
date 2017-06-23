@@ -1,0 +1,60 @@
+﻿<div>
+    <div class="row control-box">
+        <div class="col-sm-8">
+            <div class="form-group search-box">
+               
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="navbar action-box">
+                <ul class="nav navbar-nav navbar-right">
+                    <li *ngIf="canManagePolicies" class="toolbaritem">
+                        <a href="javascript:;" (click)="newPolicy(row)">
+                            <i class="fa fa-plus-circle"></i> {{'policies.management.NewPolicy' | translate}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ngx-datatable class="material colored-header sm table table-striped table-hover"
+                   [loadingIndicator]="loadingIndicator"
+                   [rows]="rows"
+                   [rowHeight]="35"
+                   [headerHeight]="35"
+                   [footerHeight]="35"
+                   [columns]="columns"
+                   [scrollbarV]="true"
+                   [columnMode]="'force'">
+    </ngx-datatable>
+
+    <ng-template #indexTemplate let-value="value">
+        <strong>{{value}}</strong>
+    </ng-template>
+
+    <ng-template #actionsTemplate let-row="row" let-value="value" let-i="index">
+        <div *ngIf="canManagePolicies">
+            <a class="btn btn-link btn-xs" href="javascript:;" (click)="editPolicy(row)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'policies.management.Edit' | translate}}</a>
+            |
+            <a class="btn btn-link btn-xs" href="javascript:;" (click)="deletePolicy(row)"><i class="fa fa-trash-o" aria-hidden="true"></i> {{'policies.management.Delete' | translate}}</a>
+        </div>
+    </ng-template>
+
+
+    <div class="modal fade" bsModal #editorModal="bs-modal" (onHidden)="onEditorModalHidden()" [config]="{backdrop: 'static'}" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title pull-left"><i class="fa fa-user-circle-o"></i> {{editingPolicyNumber ? ('policies.management.EditPolicy' | translate:editingPolicyNumber) : ('policies.management.NewPolicy' | translate)}}</h4>
+                    <button type="button" class="close pull-right" title="Close" (click)="editorModal.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <policy-info #policyEditor [isGeneralEditor]="true"></policy-info>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

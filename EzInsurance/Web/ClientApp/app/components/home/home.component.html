@@ -1,0 +1,50 @@
+<div class="container">
+    <header class="pageHeader">
+        <h3><i class="fa fa-tachometer fa-lg page-caption" aria-hidden="true"></i> {{'pageHeader.Dashboard' | translate}}</h3>
+    </header>
+
+    <div [@fadeInOut]>
+      
+        <div>
+            <div>
+                <carousel interval="6000">
+                    <slide>
+                        <img [src]="banner1" alt="ASP.NET" class="img-responsive" />
+                        <div class="carousel-caption">
+                            <p>
+                                Learn how to build ASP.NET apps that can run anywhere
+                                <a class="btn btn-default btn-sm" href="http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409" target="_blank">
+                                    Learn More
+                                </a>
+                            </p>
+                        </div>
+                    </slide>
+                    <slide>
+                        <img [src]="banner2" alt="Visual Studio" class="img-responsive" />
+                        <div class="carousel-caption">
+                            <p>
+                                One platform for building modern web, native mobile and native desktop applications
+                                <a class="btn btn-default btn-sm" href="http://angular.io" target="_blank">
+                                    Learn More
+                                </a>
+                            </p>
+                        </div>
+                    </slide>
+                    <slide>
+                        <img [src]="banner3" alt="Package Management" class="img-responsive" />
+                        <div class="carousel-caption">
+                            <p>
+                                Bring in libraries from NuGet and npm, and bundle with webpack
+                                <a class="btn btn-default btn-sm" href="http://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409" target="_blank">
+                                    Learn More
+                                </a>
+                            </p>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+
+        </div>
+
+    </div>
+</div>

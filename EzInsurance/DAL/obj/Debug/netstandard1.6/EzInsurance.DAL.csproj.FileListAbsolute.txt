@@ -1,0 +1,14 @@
+C:\TFS\RPS Dev\EzInsurance\DAL\bin\Debug\netstandard1.6\EzInsurance.DAL.deps.json
+C:\TFS\RPS Dev\EzInsurance\DAL\bin\Debug\netstandard1.6\EzInsurance.DAL.dll
+C:\TFS\RPS Dev\EzInsurance\DAL\bin\Debug\netstandard1.6\EzInsurance.DAL.pdb
+C:\TFS\RPS Dev\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.csprojResolveAssemblyReference.cache
+C:\TFS\RPS Dev\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.AssemblyInfo.cs
+C:\TFS\RPS Dev\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.dll
+C:\TFS\RPS Dev\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.pdb
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\bin\Debug\netstandard1.6\EzInsurance.DAL.deps.json
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\bin\Debug\netstandard1.6\EzInsurance.DAL.dll
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\bin\Debug\netstandard1.6\EzInsurance.DAL.pdb
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.csprojResolveAssemblyReference.cache
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.AssemblyInfo.cs
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.dll
+C:\RPS Dev\Source\Repos\RPS-EzInsurance\EzInsurance\DAL\obj\Debug\netstandard1.6\EzInsurance.DAL.pdb

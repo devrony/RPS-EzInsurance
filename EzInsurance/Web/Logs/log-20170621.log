@@ -1,0 +1,1251 @@
+2017-06-21T19:06:23.3114225-07:00  [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:06:23.3423448-07:00  [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:06:23.3739513-07:00  [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:06:25.2797741-07:00  [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:06:25.3265151-07:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:06:26.3894069-07:00 0HL5P2D50NQ1M [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:06:26.3894069-07:00 0HL5P2D50NQ1N [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:06:26.5458707-07:00 0HL5P2D50NQ1M [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:06:26.6080594-07:00 0HL5P2D50NQ1N [INF] Request finished in 252.3385ms 200  (15c52c40)
+2017-06-21T19:06:27.3745143-07:00 0HL5P2D50NQ1M [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:06:32.2172023-07:00 0HL5P2D50NQ1M [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:06:32.9052813-07:00 0HL5P2D50NQ1M [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5614.5544ms (afa2e885)
+2017-06-21T19:06:32.9052813-07:00 0HL5P2D50NQ1O [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js   (e5be5b71)
+2017-06-21T19:06:32.9203118-07:00 0HL5P2D50NQ1M [INF] Request finished in 6589.1259ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:06:40.4828572-07:00  [INF] webpack built 4a130b81d88a0766206e in 22828ms (9198a533)
+2017-06-21T19:06:41.2796959-07:00 0HL5P2D50NQ1O [INF] Request finished in 8372.9524ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T19:06:41.7175930-07:00 0HL5P2D50NQ1P [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=6198205686285438   (e5be5b71)
+2017-06-21T19:06:48.7328693-07:00 0HL5P2D50NQ1Q [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/e10af218b941826ea360d7554688d721.png   (e5be5b71)
+2017-06-21T19:06:48.7647800-07:00 0HL5P2D50NQ1Q [INF] Request finished in 24.4345ms 200 image/png; charset=UTF-8 (15c52c40)
+2017-06-21T19:06:58.6473649-07:00 0HL5P2D50NQ1R [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T19:06:58.8592365-07:00 0HL5P2D50NQ1R [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T19:06:58.9152440-07:00 0HL5P2D50NQ1R [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:06:59.5413228-07:00 0HL5P2D50NQ1R [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:06:59.5874565-07:00 0HL5P2D50NQ1R [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:06:59.6029627-07:00 0HL5P2D50NQ1R [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 703.0427ms (afa2e885)
+2017-06-21T19:06:59.6029627-07:00 0HL5P2D50NQ1R [INF] Request finished in 965.5652ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:08:10.1733722-07:00  [INF] Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:08:10.2200657-07:00  [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:08:10.2521459-07:00  [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:08:11.1887594-07:00  [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:08:11.2356327-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:08:11.6888961-07:00 0HL5P2E4CULC2 [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:08:11.6888961-07:00 0HL5P2E4CULC3 [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:08:11.8766148-07:00 0HL5P2E4CULC2 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:08:11.9700418-07:00 0HL5P2E4CULC3 [INF] Request finished in 294.1953ms 200  (15c52c40)
+2017-06-21T19:08:12.7825360-07:00 0HL5P2E4CULC2 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:08:16.6731679-07:00 0HL5P2E4CULC2 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:08:17.6419000-07:00 0HL5P2E4CULC2 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 4990.7938ms (afa2e885)
+2017-06-21T19:08:17.6578447-07:00 0HL5P2E4CULC2 [INF] Request finished in 6013.3795ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:08:17.6732533-07:00 0HL5P2E4CULC4 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=OhVH3c0VSOi4rumdtybiyADa5NyxWM6JS9Xj4J1VBGg   (e5be5b71)
+2017-06-21T19:08:18.0793775-07:00 0HL5P2E4CULC5 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=2755622457991346   (e5be5b71)
+2017-06-21T19:08:26.7050759-07:00  [INF] webpack built 4a130b81d88a0766206e in 19688ms (6dc1ef38)
+2017-06-21T19:08:27.1575484-07:00 0HL5P2E4CULC4 [INF] Request finished in 9491.0206ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T19:08:27.3919574-07:00 0HL5P2E4CULC6 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=6703839496290697   (e5be5b71)
+2017-06-21T19:08:38.6094765-07:00 0HL5P2E4CULC7 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T19:08:38.7500110-07:00 0HL5P2E4CULC7 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T19:08:38.7775701-07:00 0HL5P2E4CULC7 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:08:39.1847650-07:00 0HL5P2E4CULC7 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:08:39.2340576-07:00 0HL5P2E4CULC7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:08:39.2661082-07:00 0HL5P2E4CULC7 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 496.5842ms (afa2e885)
+2017-06-21T19:08:39.2661082-07:00 0HL5P2E4CULC7 [INF] Request finished in 661.9741ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:08:53.3746581-07:00 0HL5P2E4CULC8 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/1   (e5be5b71)
+2017-06-21T19:08:53.3746581-07:00 0HL5P2E4CULC8 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:08:53.3746581-07:00 0HL5P2E4CULC8 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:08:53.3902129-07:00 0HL5P2E4CULC8 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:08:53.5933481-07:00 0HL5P2E4CULC8 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 218.7512ms (afa2e885)
+2017-06-21T19:08:53.5933481-07:00 0HL5P2E4CULC8 [INF] Request finished in 230.893ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:08:54.2497538-07:00 0HL5P2E4CULC9 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=4208669635794435   (e5be5b71)
+2017-06-21T19:08:54.5627201-07:00 0HL5P2E4CULC5 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-06-21T19:08:54.5746000-07:00 0HL5P2E4CULC5 [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-06-21T19:08:54.7025818-07:00 0HL5P2E4CULC5 [ERR] Connection id ""0HL5P2E4BA9H2"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-21T19:08:54.7025818-07:00 0HL5P2E4CULC5 [INF] Request finished in 36615.0581ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-06-21T19:09:05.0559049-07:00 0HL5P2E4CULCA [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T19:09:05.0559049-07:00 0HL5P2E4CULCA [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T19:09:05.0559049-07:00 0HL5P2E4CULCA [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:09:05.1013402-07:00 0HL5P2E4CULCA [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:09:05.1054267-07:00 0HL5P2E4CULCA [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:09:05.1054267-07:00 0HL5P2E4CULCA [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 36.3871ms (afa2e885)
+2017-06-21T19:09:05.1054267-07:00 0HL5P2E4CULCA [INF] Request finished in 39.0095ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:11:16.0424870-07:00 0HL5P2E4CULCB [INF] Request starting HTTP/1.1 POST http://localhost:5077/api/policies application/json 520 (e5be5b71)
+2017-06-21T19:11:16.0579458-07:00 0HL5P2E4CULCB [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T19:11:16.2767314-07:00 0HL5P2E4CULCB [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.CreatePolicy (EzInsurance.Web)" with arguments ([""]) - ModelState is Invalid (ba7f4ac2)
+2017-06-21T19:11:16.2929953-07:00 0HL5P2E4CULCB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:11:16.2929953-07:00 0HL5P2E4CULCB [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.CreatePolicy (EzInsurance.Web)" in 233.3645ms (afa2e885)
+2017-06-21T19:11:16.2929953-07:00 0HL5P2E4CULCB [INF] Request finished in 255.7151ms 400 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:11:21.3391567-07:00 0HL5P2E4CULCC [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T19:11:21.3391567-07:00 0HL5P2E4CULCC [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:11:21.3708762-07:00 0HL5P2E4CULCC [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-06-21T19:11:21.5272866-07:00 0HL5P2E4CULCC [INF] Executed DbCommand (58ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:11:21.5272866-07:00 0HL5P2E4CULCC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:11:21.5272866-07:00 0HL5P2E4CULCC [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" in 199.3386ms (afa2e885)
+2017-06-21T19:11:21.5272866-07:00 0HL5P2E4CULCC [INF] Request finished in 201.8876ms 204  (15c52c40)
+2017-06-21T19:11:37.2304029-07:00  [INF] Connection id ""0HL5P2E4BA9H3"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4081 ECANCELED operation canceled
+2017-06-21T19:11:37.2457056-07:00 0HL5P2E4CULC9 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-06-21T19:11:37.2457056-07:00 0HL5P2E4CULC9 [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-06-21T19:11:37.2768534-07:00 0HL5P2E4CULC9 [ERR] Connection id ""0HL5P2E4BA9H3"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-21T19:11:37.2768534-07:00 0HL5P2E4CULC9 [INF] Request finished in 163025.3815ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-06-21T19:20:30.8097155-07:00  [INF] Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:20:30.8403600-07:00  [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:20:30.8647278-07:00  [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:20:31.8424124-07:00  [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:20:31.9066648-07:00  [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:20:32.6167448-07:00 0HL5P2L1721GB [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:20:32.6167448-07:00 0HL5P2L1721GC [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:20:32.6167448-07:00 0HL5P2L1721GD [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=8290749268594237   (e5be5b71)
+2017-06-21T19:20:32.8214599-07:00 0HL5P2L1721GC [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:20:32.8915494-07:00 0HL5P2L1721GB [INF] Request finished in 314.6804ms 200  (15c52c40)
+2017-06-21T19:20:33.6505277-07:00 0HL5P2L1721GC [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:20:37.8459047-07:00 0HL5P2L1721GC [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:20:38.9530407-07:00 0HL5P2L1721GC [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5448.7577ms (afa2e885)
+2017-06-21T19:20:38.9858383-07:00 0HL5P2L1721GC [INF] Request finished in 6425.1875ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:20:40.5621267-07:00 0HL5P2L1721GE [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=9224631695086316   (e5be5b71)
+2017-06-21T19:20:54.4768756-07:00  [INF] webpack built 87c59ed05709513db225 in 25791ms (ae3c0386)
+2017-06-21T19:20:58.6721795-07:00 0HL5P2L1721GF [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/4a130b81d88a0766206e.hot-update.json   (e5be5b71)
+2017-06-21T19:20:58.6740374-07:00 0HL5P2L1721GG [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/4a130b81d88a0766206e.hot-update.json   (e5be5b71)
+2017-06-21T19:20:58.6910318-07:00 0HL5P2L1721GF [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:20:58.6910318-07:00 0HL5P2L1721GG [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:20:58.7012481-07:00 0HL5P2L1721GG [INF] Request finished in 27.3327ms 404  (15c52c40)
+2017-06-21T19:20:58.7012481-07:00 0HL5P2L1721GF [INF] Request finished in 28.4681ms 404  (15c52c40)
+2017-06-21T19:22:41.9293572-07:00 0HL5P2L1721GH [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T19:22:41.9293572-07:00 0HL5P2L1721GH [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:22:41.9540260-07:00 0HL5P2L1721GH [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:22:42.2802454-07:00 0HL5P2L1721GH [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:22:42.4949323-07:00 0HL5P2L1721GH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:22:42.6072444-07:00 0HL5P2L1721GH [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 659.8664ms (afa2e885)
+2017-06-21T19:22:42.6159823-07:00 0HL5P2L1721GH [INF] Request finished in 687.2446ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:22:50.6605042-07:00 0HL5P2L1721GI [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/1   (e5be5b71)
+2017-06-21T19:22:50.6605042-07:00 0HL5P2L1721GI [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:22:50.6625530-07:00 0HL5P2L1721GI [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:22:50.6665747-07:00 0HL5P2L1721GI [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:22:50.8464487-07:00 0HL5P2L1721GI [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 184.12ms (afa2e885)
+2017-06-21T19:22:50.8464487-07:00 0HL5P2L1721GI [INF] Request finished in 186.5785ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:22:50.8574500-07:00 0HL5P2L1721GJ [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=dli_-wwaZZ6tYSNZh8yB5JLlv_ND53qz1f-uYChyOhk   (e5be5b71)
+2017-06-21T19:22:51.2035501-07:00 0HL5P2L1721GJ [INF] Request finished in 346.6682ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T19:22:51.4935148-07:00 0HL5P2L1721GK [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=8154391107052025   (e5be5b71)
+2017-06-21T19:22:51.5918401-07:00  [INF] Connection id ""0HL5P2L14SS33"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4081 ECANCELED operation canceled
+2017-06-21T19:22:51.5959089-07:00  [INF] Connection id ""0HL5P2L14SS33"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4081 ECANCELED operation canceled
+2017-06-21T19:22:51.7314948-07:00 0HL5P2L1721GD [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-06-21T19:22:51.7405789-07:00 0HL5P2L1721GD [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-06-21T19:22:51.7674534-07:00 0HL5P2L1721GD [ERR] Connection id ""0HL5P2L14SS33"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-21T19:22:51.7674534-07:00 0HL5P2L1721GD [INF] Request finished in 139207.6061ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-06-21T19:22:58.6829722-07:00 0HL5P2L1721GL [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/4a130b81d88a0766206e.hot-update.json   (e5be5b71)
+2017-06-21T19:22:58.6892284-07:00 0HL5P2L1721GL [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:22:58.6892284-07:00 0HL5P2L1721GL [INF] Request finished in 6.7389ms 404  (15c52c40)
+2017-06-21T19:25:50.4552507-07:00  [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:25:50.5060473-07:00  [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:25:50.5357852-07:00  [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:25:51.4869967-07:00  [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:25:51.5319420-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:25:52.1842083-07:00 0HL5P2O0EMR4L [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:25:52.1832029-07:00 0HL5P2O0EMR4K [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:25:52.3909366-07:00 0HL5P2O0EMR4L [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:25:52.4098850-07:00 0HL5P2O0EMR4K [INF] Request finished in 263.1838ms 200  (15c52c40)
+2017-06-21T19:25:53.0580615-07:00 0HL5P2O0EMR4L [ERR] An unhandled exception has occurred: The following errors occurred with attribute routing information:
+
+For action: 'EzInsurance.Web.Controllers.PoliciesController.UpdatePolicy (EzInsurance.Web)'
+Error: The route parameter name 'id' appears more than one time in the route template.
+Parameter name: routeTemplate (c2d40089)
+Microsoft.AspNetCore.Routing.RouteCreationException: The following errors occurred with attribute routing information:
+
+For action: 'EzInsurance.Web.Controllers.PoliciesController.UpdatePolicy (EzInsurance.Web)'
+Error: The route parameter name 'id' appears more than one time in the route template.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetRouteInfos(IReadOnlyList`1 actions)
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.AddEntries(TreeRouteBuilder builder, ActionDescriptorCollection actions)
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.SwaggerUi.Application.SwaggerUiMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.SwaggerUi.Application.RedirectMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.Swagger.Application.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-06-21T19:25:53.1919448-07:00 0HL5P2O0EMR4L [INF] Request finished in 1064.2753ms 500 application/json (15c52c40)
+2017-06-21T19:26:05.3466478-07:00  [INF] webpack built 87c59ed05709513db225 in 16848ms (7d0228d5)
+2017-06-21T19:27:26.0125113-07:00  [INF] Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:27:26.0412754-07:00  [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:27:26.0665115-07:00  [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:27:27.0464625-07:00  [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:27:27.0903665-07:00  [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:27:27.5876489-07:00 0HL5P2OSSHDEC [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:27:27.5876489-07:00 0HL5P2OSSHDED [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:27:27.8123806-07:00 0HL5P2OSSHDEC [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:27:27.8558559-07:00 0HL5P2OSSHDED [INF] Request finished in 312.2611ms 200  (15c52c40)
+2017-06-21T19:27:28.6128882-07:00 0HL5P2OSSHDEC [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:27:32.4607539-07:00 0HL5P2OSSHDEC [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:27:33.5199243-07:00 0HL5P2OSSHDEC [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5016.4361ms (afa2e885)
+2017-06-21T19:27:33.5367057-07:00 0HL5P2OSSHDEC [INF] Request finished in 6008.7004ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:27:34.2107893-07:00 0HL5P2OSSHDEE [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=8665857209099654   (e5be5b71)
+2017-06-21T19:27:49.8668718-07:00  [INF] webpack built 87c59ed05709513db225 in 26177ms (014137ed)
+2017-06-21T19:27:49.9888001-07:00 0HL5P2OSSHDEE [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-06-21T19:27:49.9936448-07:00 0HL5P2OSSHDEE [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-06-21T19:27:50.0206551-07:00 0HL5P2OSSHDEE [ERR] Connection id ""0HL5P2OSPTDDB"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-21T19:27:50.0216926-07:00 0HL5P2OSSHDEE [INF] Request finished in 15810.7409ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-06-21T19:27:57.1440799-07:00 0HL5P2OSSHDEF [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T19:27:57.1440799-07:00 0HL5P2OSSHDEF [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:27:57.1621884-07:00 0HL5P2OSSHDEF [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:27:57.1653935-07:00 0HL5P2OSSHDEF [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:27:57.2920847-07:00 0HL5P2OSSHDEF [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 130.4276ms (afa2e885)
+2017-06-21T19:27:57.2920847-07:00 0HL5P2OSSHDEF [INF] Request finished in 148.7928ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:27:57.9182409-07:00 0HL5P2OSSHDEG [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=2766034157930541   (e5be5b71)
+2017-06-21T19:28:04.6875636-07:00 0HL5P2OSSHDEH [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T19:28:04.9926737-07:00 0HL5P2OSSHDEH [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T19:28:05.0297799-07:00 0HL5P2OSSHDEH [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:28:05.7997753-07:00 0HL5P2OSSHDEH [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:28:06.1626751-07:00 0HL5P2OSSHDEH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:28:06.2595889-07:00 0HL5P2OSSHDEH [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 1233.6039ms (afa2e885)
+2017-06-21T19:28:06.2636023-07:00 0HL5P2OSSHDEH [INF] Request finished in 1575.6685ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:28:14.4599318-07:00 0HL5P2OSSHDEI [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T19:28:14.4609186-07:00 0HL5P2OSSHDEI [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:28:14.4632092-07:00 0HL5P2OSSHDEI [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:28:14.4910666-07:00 0HL5P2OSSHDEI [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:28:14.4960772-07:00 0HL5P2OSSHDEI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:28:14.5131418-07:00 0HL5P2OSSHDEI [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 50.9898ms (afa2e885)
+2017-06-21T19:28:14.5140631-07:00 0HL5P2OSSHDEI [INF] Request finished in 53.7623ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:28:17.5825716-07:00 0HL5P2OSSHDEJ [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/1   (e5be5b71)
+2017-06-21T19:28:17.5825716-07:00 0HL5P2OSSHDEJ [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:28:17.7574776-07:00 0HL5P2OSSHDEJ [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:28:17.9115221-07:00 0HL5P2OSSHDEJ [INF] Executed DbCommand (53ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:28:17.9135416-07:00 0HL5P2OSSHDEJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:28:17.9150555-07:00 0HL5P2OSSHDEJ [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" in 330.3928ms (afa2e885)
+2017-06-21T19:28:17.9158484-07:00 0HL5P2OSSHDEJ [INF] Request finished in 333.3175ms 204  (15c52c40)
+2017-06-21T19:28:33.7412272-07:00  [INF] Connection id ""0HL5P2OSPTDDA"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4081 ECANCELED operation canceled
+2017-06-21T19:28:33.7552665-07:00 0HL5P2OSSHDEG [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-06-21T19:28:33.7612248-07:00 0HL5P2OSSHDEG [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-06-21T19:28:33.7811727-07:00 0HL5P2OSSHDEG [ERR] Connection id ""0HL5P2OSPTDDA"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-21T19:28:33.7811727-07:00 0HL5P2OSSHDEG [INF] Request finished in 35863.48ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-06-21T19:28:56.9995300-07:00 0HL5P2OSSHDEK [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/1   (e5be5b71)
+2017-06-21T19:28:56.9995300-07:00 0HL5P2OSSHDEK [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:28:56.9995300-07:00 0HL5P2OSSHDEK [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:29:02.1188228-07:00 0HL5P2OSSHDEK [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:29:04.1900418-07:00 0HL5P2OSSHDEK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:29:04.1900418-07:00 0HL5P2OSSHDEK [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" in 7190.219ms (afa2e885)
+2017-06-21T19:29:04.1917955-07:00 0HL5P2OSSHDEK [INF] Request finished in 7191.4816ms 204  (15c52c40)
+2017-06-21T19:29:35.5407709-07:00 0HL5P2OSSHDEL [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/1   (e5be5b71)
+2017-06-21T19:29:35.5407709-07:00 0HL5P2OSSHDEL [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:29:35.5417404-07:00 0HL5P2OSSHDEL [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:29:41.0770676-07:00 0HL5P2OSSHDEL [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:30:22.0065072-07:00  [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:30:22.0284556-07:00  [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:30:22.0525129-07:00  [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:30:23.0195608-07:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:30:23.0614954-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:30:23.6305874-07:00 0HL5P2QHBD5KT [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:30:23.6296459-07:00 0HL5P2QHBD5KU [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:30:23.8565836-07:00 0HL5P2QHBD5KU [INF] Request finished in 276.3681ms 200  (15c52c40)
+2017-06-21T19:30:23.9065356-07:00 0HL5P2QHBD5KT [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:30:24.6453844-07:00 0HL5P2QHBD5KT [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:30:28.7428837-07:00 0HL5P2QHBD5KT [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:30:29.7490494-07:00 0HL5P2QHBD5KT [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5184.4586ms (afa2e885)
+2017-06-21T19:30:29.7721171-07:00 0HL5P2QHBD5KT [INF] Request finished in 6202.8969ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:30:30.5151270-07:00 0HL5P2QHBD5KV [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=9548242747592257   (e5be5b71)
+2017-06-21T19:30:44.1616910-07:00 0HL5P2QHBD5L0 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/1   (e5be5b71)
+2017-06-21T19:30:44.1627411-07:00 0HL5P2QHBD5L0 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:30:44.5238630-07:00 0HL5P2QHBD5L0 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:30:52.0892264-07:00  [INF] webpack built 87c59ed05709513db225 in 25708ms (1990c87c)
+2017-06-21T19:30:52.4033182-07:00 0HL5P2QHBD5L0 [INF] Executed DbCommand (60ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:30:52.4384491-07:00 0HL5P2QHBD5L0 [INF] Executing HttpStatusCodeResult, setting HTTP status code 404 (e28ccfae)
+2017-06-21T19:30:52.4404734-07:00 0HL5P2QHBD5L0 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" in 8244.5763ms (afa2e885)
+2017-06-21T19:30:52.4432282-07:00 0HL5P2QHBD5L0 [INF] Request finished in 8281.568ms 404  (15c52c40)
+2017-06-21T19:31:09.1311460-07:00 0HL5P2QHBD5L1 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/2   (e5be5b71)
+2017-06-21T19:31:09.1311460-07:00 0HL5P2QHBD5L1 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:31:09.1351551-07:00 0HL5P2QHBD5L1 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:31:11.7359152-07:00 0HL5P2QHBD5L1 [INF] Executed DbCommand (25ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:31:11.8593099-07:00 0HL5P2QHBD5L1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:31:11.9144203-07:00 0HL5P2QHBD5L1 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" in 2781.3657ms (afa2e885)
+2017-06-21T19:31:11.9144203-07:00 0HL5P2QHBD5L1 [INF] Request finished in 2783.8945ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:32:10.0766741-07:00  [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:32:10.1127033-07:00  [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:32:10.1567768-07:00  [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:32:11.0039203-07:00  [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:32:11.0767448-07:00  [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:32:11.6889076-07:00 0HL5P2RHHUHL0 [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:32:11.6889076-07:00 0HL5P2RHHUHL1 [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:32:11.9330680-07:00 0HL5P2RHHUHL0 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:32:11.9811995-07:00 0HL5P2RHHUHL1 [INF] Request finished in 315.881ms 200  (15c52c40)
+2017-06-21T19:32:12.7280234-07:00 0HL5P2RHHUHL0 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:32:16.9921506-07:00 0HL5P2RHHUHL0 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:32:18.1112507-07:00 0HL5P2RHHUHL0 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5496.6739ms (afa2e885)
+2017-06-21T19:32:18.1261216-07:00 0HL5P2RHHUHL0 [INF] Request finished in 6505.867ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:32:18.1611596-07:00 0HL5P2RHHUHL2 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=dli_-wwaZZ6tYSNZh8yB5JLlv_ND53qz1f-uYChyOhk   (e5be5b71)
+2017-06-21T19:32:31.6653493-07:00  [INF] webpack built 87c59ed05709513db225 in 23882ms (dc26d49a)
+2017-06-21T19:32:32.1729732-07:00 0HL5P2RHHUHL2 [INF] Request finished in 14012.8051ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T19:32:32.4761846-07:00 0HL5P2RHHUHL3 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=5642191888820433   (e5be5b71)
+2017-06-21T19:32:39.6043652-07:00 0HL5P2RHHUHL4 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/e10af218b941826ea360d7554688d721.png   (e5be5b71)
+2017-06-21T19:32:39.6625052-07:00 0HL5P2RHHUHL4 [INF] Request finished in 57.7588ms 200 image/png; charset=UTF-8 (15c52c40)
+2017-06-21T19:33:05.9018929-07:00 0HL5P2RHHUHL5 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/2   (e5be5b71)
+2017-06-21T19:33:05.9018929-07:00 0HL5P2RHHUHL5 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:33:06.0979770-07:00 0HL5P2RHHUHL5 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:33:08.7031278-07:00 0HL5P2RHHUHL5 [INF] Executed DbCommand (58ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [e].[Id], [e].[CreatedByUserId], [e].[DateCreated], [e].[DateModified], [e].[EffectiveDate], [e].[ExpirationDate], [e].[ModifiedByUserId], [e].[Number], [e].[PrimaryInsuredAddressId], [e].[PrimaryInsuredMailingAddressId], [e].[PrimaryInsuredName], [e].[RiskAddressId], [e].[RiskConstructionTypeId], [e].[RiskYearBuilt]
+FROM [Policies] AS [e]
+WHERE [e].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:33:08.8284805-07:00 0HL5P2RHHUHL5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:33:08.8750776-07:00 0HL5P2RHHUHL5 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetById (EzInsurance.Web)" in 2948.2334ms (afa2e885)
+2017-06-21T19:33:08.8780517-07:00 0HL5P2RHHUHL5 [INF] Request finished in 2975.9383ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:33:19.8896843-07:00 0HL5P2RHHUHL6 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/details/2   (e5be5b71)
+2017-06-21T19:33:19.8906786-07:00 0HL5P2RHHUHL6 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:33:19.8976661-07:00 0HL5P2RHHUHL6 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:33:19.9097412-07:00 0HL5P2RHHUHL6 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:33:20.1206840-07:00 0HL5P2RHHUHL6 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 223.6013ms (afa2e885)
+2017-06-21T19:33:20.1206840-07:00 0HL5P2RHHUHL6 [INF] Request finished in 231.1893ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:33:20.7728124-07:00 0HL5P2RHHUHL7 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=066643292543618   (e5be5b71)
+2017-06-21T19:33:51.5825289-07:00  [INF] Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:33:51.6165058-07:00  [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:33:51.6395201-07:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:33:52.5416345-07:00  [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:33:52.5916090-07:00  [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:33:53.1148165-07:00 0HL5P2SFP6A5T [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:33:53.1148165-07:00 0HL5P2SFP6A5U [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:33:53.2946229-07:00 0HL5P2SFP6A5U [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:33:53.3396651-07:00 0HL5P2SFP6A5T [INF] Request finished in 239.5444ms 200  (15c52c40)
+2017-06-21T19:33:54.0647100-07:00 0HL5P2SFP6A5U [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:33:57.2000214-07:00 0HL5P2SFP6A5V [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=2775924360217807   (e5be5b71)
+2017-06-21T19:33:58.1208866-07:00 0HL5P2SFP6A5U [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:33:59.1359416-07:00 0HL5P2SFP6A5U [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5178.4414ms (afa2e885)
+2017-06-21T19:33:59.1535045-07:00 0HL5P2SFP6A5U [INF] Request finished in 6085.792ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:33:59.9340979-07:00 0HL5P2SFP6A60 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=600277771835068   (e5be5b71)
+2017-06-21T19:34:14.5848286-07:00  [INF] webpack built 87c59ed05709513db225 in 25339ms (f13de3f7)
+2017-06-21T19:34:19.7661342-07:00 0HL5P2SFP6A61 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/details/2   (e5be5b71)
+2017-06-21T19:34:19.7661342-07:00 0HL5P2SFP6A61 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:34:19.9842581-07:00 0HL5P2SFP6A61 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetWithDetailsById (EzInsurance.Web)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:34:20.3481562-07:00 0HL5P2SFP6A61 [INF] Executed DbCommand (76ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id]
+WHERE [p].[Id] = @__id_0 (6438bdd5)
+2017-06-21T19:34:20.5714146-07:00 0HL5P2SFP6A61 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:34:20.6372260-07:00 0HL5P2SFP6A61 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetWithDetailsById (EzInsurance.Web)" in 836.6826ms (afa2e885)
+2017-06-21T19:34:20.6411889-07:00 0HL5P2SFP6A61 [INF] Request finished in 872.8252ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T19:35:22.0719191-07:00  [INF] Executed DbCommand (152ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:35:22.1020576-07:00  [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T19:35:22.1277572-07:00  [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T19:35:23.2350030-07:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:35:23.2788382-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T19:35:23.7538522-07:00 0HL5P2TAPKJ2G [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T19:35:23.7538522-07:00 0HL5P2TAPKJ2I [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=79764087083023   (e5be5b71)
+2017-06-21T19:35:23.7538522-07:00 0HL5P2TAPKJ2H [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T19:35:24.1012454-07:00 0HL5P2TAPKJ2G [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:35:24.2308785-07:00 0HL5P2TAPKJ2H [INF] Request finished in 524.6423ms 200  (15c52c40)
+2017-06-21T19:35:24.9508924-07:00 0HL5P2TAPKJ2G [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:35:29.1013291-07:00 0HL5P2TAPKJ2G [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T19:35:30.0991879-07:00 0HL5P2TAPKJ2G [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5273.8405ms (afa2e885)
+2017-06-21T19:35:30.1192404-07:00 0HL5P2TAPKJ2G [INF] Request finished in 6424.5985ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T19:35:30.9102528-07:00 0HL5P2TAPKJ2J [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=8005285134393402   (e5be5b71)
+2017-06-21T19:35:44.8950658-07:00  [INF] webpack built 87c59ed05709513db225 in 25125ms (8f4b5721)
+2017-06-21T19:36:00.8150204-07:00 0HL5P2TAPKJ2K [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies/details/   (e5be5b71)
+2017-06-21T19:36:00.8150204-07:00 0HL5P2TAPKJ2K [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T19:36:00.8429635-07:00 0HL5P2TAPKJ2K [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T19:36:01.2251280-07:00 0HL5P2TAPKJ2K [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt], [a].[Id], [a].[City], [a].[State], [a].[Street1], [a].[Street2], [a].[ZipCode], [a0].[Id], [a0].[City], [a0].[State], [a0].[Street1], [a0].[Street2], [a0].[ZipCode], [a1].[Id], [a1].[City], [a1].[State], [a1].[Street1], [a1].[Street2], [a1].[ZipCode]
+FROM [Policies] AS [p]
+INNER JOIN [Addresses] AS [a] ON [p].[PrimaryInsuredAddressId] = [a].[Id]
+INNER JOIN [Addresses] AS [a0] ON [p].[PrimaryInsuredMailingAddressId] = [a0].[Id]
+INNER JOIN [Addresses] AS [a1] ON [p].[RiskAddressId] = [a1].[Id] (6438bdd5)
+2017-06-21T19:36:01.5571276-07:00 0HL5P2TAPKJ2K [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T19:36:01.6279887-07:00 0HL5P2TAPKJ2K [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.GetAllWithDetails (EzInsurance.Web)" in 790.8124ms (afa2e885)
+2017-06-21T19:36:01.6320590-07:00 0HL5P2TAPKJ2K [INF] Request finished in 817.3175ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T20:38:23.4245011-07:00  [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T20:38:23.4537147-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T20:38:23.5319381-07:00  [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T20:38:24.4537704-07:00  [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T20:38:24.5164402-07:00  [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T20:38:25.0474782-07:00 0HL5P40HMOJ8V [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T20:38:25.0474782-07:00 0HL5P40HMOJ90 [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T20:38:25.2194798-07:00 0HL5P40HMOJ8V [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T20:38:25.2505238-07:00 0HL5P40HMOJ90 [INF] Request finished in 240.0707ms 200  (15c52c40)
+2017-06-21T20:38:25.8755292-07:00 0HL5P40HMOJ8V [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T20:38:29.4693923-07:00 0HL5P40HMOJ8V [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T20:38:30.6881791-07:00 0HL5P40HMOJ8V [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 4884.3018ms (afa2e885)
+2017-06-21T20:38:30.7036679-07:00 0HL5P40HMOJ8V [INF] Request finished in 5711.3844ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T20:38:30.7662832-07:00 0HL5P40HMOJ91 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=dli_-wwaZZ6tYSNZh8yB5JLlv_ND53qz1f-uYChyOhk   (e5be5b71)
+2017-06-21T20:38:41.3289186-07:00  [INF] webpack built 0c7e381f37b33ac78125 in 20062ms (5c0b6e51)
+2017-06-21T20:38:41.7661670-07:00 0HL5P40HMOJ91 [INF] Request finished in 11006.6441ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T20:38:41.9849419-07:00 0HL5P40HMOJ92 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=6433784929781061   (e5be5b71)
+2017-06-21T20:38:48.1100216-07:00 0HL5P40HMOJ93 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/e10af218b941826ea360d7554688d721.png   (e5be5b71)
+2017-06-21T20:38:48.1568238-07:00 0HL5P40HMOJ93 [INF] Request finished in 48.7261ms 200 image/png; charset=UTF-8 (15c52c40)
+2017-06-21T20:40:06.6699655-07:00 0HL5P40HMOJ94 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T20:40:06.7940473-07:00 0HL5P40HMOJ94 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T20:40:06.8139774-07:00 0HL5P40HMOJ94 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T20:40:07.0233755-07:00 0HL5P40HMOJ94 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt]
+FROM [Policies] AS [p] (6438bdd5)
+2017-06-21T20:40:07.2734018-07:00 0HL5P40HMOJ94 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T20:40:07.3604110-07:00 0HL5P40HMOJ94 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" in 557.0686ms (afa2e885)
+2017-06-21T20:40:07.3760230-07:00 0HL5P40HMOJ94 [INF] Request finished in 710.364ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T20:40:25.8562929-07:00 0HL5P40HMOJ95 [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T20:40:25.8562929-07:00 0HL5P40HMOJ95 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T20:40:25.8562929-07:00 0HL5P40HMOJ95 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T20:40:25.8642944-07:00 0HL5P40HMOJ95 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T20:40:26.0730206-07:00 0HL5P40HMOJ95 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 227.0036ms (afa2e885)
+2017-06-21T20:40:26.0730206-07:00 0HL5P40HMOJ95 [INF] Request finished in 229.1452ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T20:40:26.3673795-07:00 0HL5P40HMOJ96 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/tryCatch.js.map   (e5be5b71)
+2017-06-21T20:40:26.4713941-07:00 0HL5P40HMOJ96 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T20:40:26.4872649-07:00 0HL5P40HMOJ96 [INF] Request finished in 119.6973ms 404  (15c52c40)
+2017-06-21T20:40:26.5153163-07:00 0HL5P40HMOJ97 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js.map   (e5be5b71)
+2017-06-21T20:40:27.0593111-07:00 0HL5P40HMOJ97 [INF] Request finished in 545.4269ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:08:07.7566990-07:00  [INF] Executed DbCommand (177ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T21:08:07.7874131-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-21T21:08:07.8330510-07:00  [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-21T21:08:08.7764374-07:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T21:08:08.8204268-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-21T21:08:09.4594577-07:00 0HL5P4H5GAMFR [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-21T21:08:09.4594577-07:00 0HL5P4H5GAMFS [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-21T21:08:09.4594577-07:00 0HL5P4H5GAMFT [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=9723393769059685   (e5be5b71)
+2017-06-21T21:08:09.8984866-07:00 0HL5P4H5GAMFS [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:08:09.9645338-07:00 0HL5P4H5GAMFR [INF] Request finished in 491.4176ms 200  (15c52c40)
+2017-06-21T21:08:10.9858980-07:00 0HL5P4H5GAMFS [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:08:15.0689692-07:00 0HL5P4H5GAMFS [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T21:08:16.3918942-07:00 0HL5P4H5GAMFS [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5533.3191ms (afa2e885)
+2017-06-21T21:08:16.4060292-07:00 0HL5P4H5GAMFS [INF] Request finished in 7002.3762ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T21:08:16.4315071-07:00 0HL5P4H5GAMFU [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=cFCYayQ9526cvgt6m0LENar9KJxHa8gmQhIyeZST7_s   (e5be5b71)
+2017-06-21T21:08:27.9596264-07:00  [INF] webpack built fa9e02ccd992cd7486f9 in 22414ms (9af5788d)
+2017-06-21T21:08:28.4555430-07:00 0HL5P4H5GAMFU [INF] Request finished in 12024.2982ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:08:28.7466565-07:00 0HL5P4H5GAMFV [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=4283714071804045   (e5be5b71)
+2017-06-21T21:09:09.8479318-07:00 0HL5P4H5GAMG0 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T21:09:09.8889660-07:00 0HL5P4H5GAMG1 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/riskconstructiontypes   (e5be5b71)
+2017-06-21T21:09:10.0291039-07:00 0HL5P4H5GAMG0 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T21:09:10.0291039-07:00 0HL5P4H5GAMG1 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T21:09:10.0491612-07:00 0HL5P4H5GAMG1 [INF] Executing action method "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:09:10.0491612-07:00 0HL5P4H5GAMG0 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:09:10.2419620-07:00 0HL5P4H5GAMG1 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Name]
+FROM [RiskConstructionTypes] AS [r] (6438bdd5)
+2017-06-21T21:09:10.3011972-07:00 0HL5P4H5GAMG0 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt]
+FROM [Policies] AS [p] (6438bdd5)
+2017-06-21T21:09:10.4399693-07:00 0HL5P4H5GAMG1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:09:10.4399693-07:00 0HL5P4H5GAMG0 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:09:10.4820896-07:00 0HL5P4H5GAMG1 [INF] Executed action "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" in 435.881ms (afa2e885)
+2017-06-21T21:09:10.4854524-07:00 0HL5P4H5GAMG1 [INF] Request finished in 596.7462ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:09:10.5570360-07:00 0HL5P4H5GAMG0 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" in 510.3119ms (afa2e885)
+2017-06-21T21:09:10.5579944-07:00 0HL5P4H5GAMG0 [INF] Request finished in 709.7548ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:10:39.8073289-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:10:43.4255855-07:00  [INF] webpack built 70bba074747840e7d2a7 in 3293ms (5ac45ef2)
+2017-06-21T21:10:45.0714395-07:00 0HL5P4H5GAMG2 [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T21:10:45.0714395-07:00 0HL5P4H5GAMG2 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:10:45.0827624-07:00 0HL5P4H5GAMG2 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:10:45.0914510-07:00 0HL5P4H5GAMG2 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T21:10:45.3044410-07:00 0HL5P4H5GAMG2 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 221.6051ms (afa2e885)
+2017-06-21T21:10:45.3044410-07:00 0HL5P4H5GAMG2 [INF] Request finished in 233.952ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T21:10:45.3214555-07:00 0HL5P4H5GAMG3 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.css?v=K23JgRgXvMWE1kAvN9uLrE0FmZ_YkJV4OeYuFv30gKA   (e5be5b71)
+2017-06-21T21:10:45.3654322-07:00 0HL5P4H5GAMG3 [INF] Sending file. Request path: '"/dist/vendor.css"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.css"' (27b0a520)
+2017-06-21T21:10:45.3994960-07:00 0HL5P4H5GAMG3 [INF] Request finished in 78.0187ms 200 text/css (15c52c40)
+2017-06-21T21:10:45.5354743-07:00 0HL5P4H5GAMG4 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.js?v=keSSCGtO5UnHKGzsYZ6G9BvJnWQjEmRQX0b7OwnBNls   (e5be5b71)
+2017-06-21T21:10:45.5415654-07:00 0HL5P4H5GAMG4 [INF] Sending file. Request path: '"/dist/vendor.js"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.js"' (27b0a520)
+2017-06-21T21:10:45.7154601-07:00 0HL5P4H5GAMG4 [INF] Request finished in 180.1418ms 200 application/javascript (15c52c40)
+2017-06-21T21:10:46.1667118-07:00 0HL5P4H5GAMG5 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=3XhCWypwAwXfIjrBtYdYaiVoQfoNR9HcCQuqx1Cf3Qc   (e5be5b71)
+2017-06-21T21:10:46.3815578-07:00 0HL5P4H5GAMG5 [INF] Request finished in 213.8018ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:10:46.5936139-07:00 0HL5P4H5GAMG6 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=4374915939823214   (e5be5b71)
+2017-06-21T21:10:52.9479527-07:00 0HL5P4H5GAMG7 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T21:10:52.9501540-07:00 0HL5P4H5GAMG7 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T21:10:52.9521570-07:00 0HL5P4H5GAMG7 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:10:52.9699632-07:00 0HL5P4H5GAMG7 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt]
+FROM [Policies] AS [p] (6438bdd5)
+2017-06-21T21:10:52.9699632-07:00 0HL5P4H5GAMG7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:10:52.9709757-07:00 0HL5P4H5GAMG7 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" in 19.3023ms (afa2e885)
+2017-06-21T21:10:52.9709757-07:00 0HL5P4H5GAMG7 [INF] Request finished in 23.1024ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:10:52.9969822-07:00 0HL5P4H5GAMG8 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/riskconstructiontypes   (e5be5b71)
+2017-06-21T21:10:52.9980935-07:00 0HL5P4H5GAMG8 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T21:10:52.9980935-07:00 0HL5P4H5GAMG8 [INF] Executing action method "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:10:53.0022863-07:00 0HL5P4H5GAMG8 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Name]
+FROM [RiskConstructionTypes] AS [r] (6438bdd5)
+2017-06-21T21:10:53.0022863-07:00 0HL5P4H5GAMG8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:10:53.0028793-07:00 0HL5P4H5GAMG8 [INF] Executed action "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" in 4.7502ms (afa2e885)
+2017-06-21T21:10:53.0028793-07:00 0HL5P4H5GAMG8 [INF] Request finished in 6.492ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:15:15.7828102-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:15:18.8386395-07:00  [INF] webpack built b71a5c9858f8f5e72ef0 in 2954ms (62ae427f)
+2017-06-21T21:15:25.9734626-07:00 0HL5P4H5GAMG9 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/70bba074747840e7d2a7.hot-update.json   (e5be5b71)
+2017-06-21T21:15:25.9866549-07:00 0HL5P4H5GAMG9 [INF] Request finished in 13.0469ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:15:25.9983713-07:00 0HL5P4H5GAMGA [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/0.70bba074747840e7d2a7.hot-update.js   (e5be5b71)
+2017-06-21T21:15:26.0053647-07:00 0HL5P4H5GAMGA [INF] Request finished in 7.2169ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:15:30.1375950-07:00 0HL5P4H5GAMGB [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T21:15:30.1398397-07:00 0HL5P4H5GAMGB [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T21:15:30.1406085-07:00 0HL5P4H5GAMGB [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:15:30.1666652-07:00 0HL5P4H5GAMGC [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/riskconstructiontypes   (e5be5b71)
+2017-06-21T21:15:30.1700288-07:00 0HL5P4H5GAMGC [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2017-06-21T21:15:30.1700288-07:00 0HL5P4H5GAMGC [INF] Executing action method "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:15:30.2676335-07:00 0HL5P4H5GAMGC [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Name]
+FROM [RiskConstructionTypes] AS [r] (6438bdd5)
+2017-06-21T21:15:30.2687488-07:00 0HL5P4H5GAMGC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:15:30.2687488-07:00 0HL5P4H5GAMGC [INF] Executed action "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" in 99.1352ms (afa2e885)
+2017-06-21T21:15:30.2687488-07:00 0HL5P4H5GAMGC [INF] Request finished in 102.733ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:15:30.2708627-07:00 0HL5P4H5GAMGB [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt]
+FROM [Policies] AS [p] (6438bdd5)
+2017-06-21T21:15:30.2722103-07:00 0HL5P4H5GAMGB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:15:30.2726626-07:00 0HL5P4H5GAMGB [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" in 132.3338ms (afa2e885)
+2017-06-21T21:15:30.2726626-07:00 0HL5P4H5GAMGB [INF] Request finished in 134.716ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:18:37.9604489-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:18:41.2708647-07:00  [INF] webpack built c1555a220f6c635ec159 in 3265ms (b37c64ef)
+2017-06-21T21:18:45.4660762-07:00 0HL5P4H5GAMGD [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T21:18:45.4660762-07:00 0HL5P4H5GAMGD [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:18:45.4680586-07:00 0HL5P4H5GAMGD [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:18:45.4690668-07:00 0HL5P4H5GAMGD [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T21:18:45.6619821-07:00 0HL5P4H5GAMGD [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 195.5184ms (afa2e885)
+2017-06-21T21:18:45.6628892-07:00 0HL5P4H5GAMGD [INF] Request finished in 197.2424ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T21:18:45.6838844-07:00 0HL5P4H5GAMGE [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.css?v=K23JgRgXvMWE1kAvN9uLrE0FmZ_YkJV4OeYuFv30gKA   (e5be5b71)
+2017-06-21T21:18:45.7129147-07:00 0HL5P4H5GAMGE [INF] Sending file. Request path: '"/dist/vendor.css"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.css"' (27b0a520)
+2017-06-21T21:18:45.7439227-07:00 0HL5P4H5GAMGE [INF] Request finished in 60.8158ms 200 text/css (15c52c40)
+2017-06-21T21:18:45.9500560-07:00 0HL5P4H5GAMGF [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.js?v=keSSCGtO5UnHKGzsYZ6G9BvJnWQjEmRQX0b7OwnBNls   (e5be5b71)
+2017-06-21T21:18:45.9579426-07:00 0HL5P4H5GAMGF [INF] Sending file. Request path: '"/dist/vendor.js"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.js"' (27b0a520)
+2017-06-21T21:18:46.0759673-07:00 0HL5P4H5GAMGF [INF] Request finished in 125.7118ms 200 application/javascript (15c52c40)
+2017-06-21T21:18:46.5169779-07:00 0HL5P4H5GAMGG [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=b6-YZvJ5Az_A8QhdTI3PMJx7nJUNgRLw6eBwqmxXqCw   (e5be5b71)
+2017-06-21T21:18:46.7370589-07:00 0HL5P4H5GAMGG [INF] Request finished in 220.141ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:18:46.9520072-07:00 0HL5P4H5GAMGH [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=0283174040933567   (e5be5b71)
+2017-06-21T21:20:02.4293805-07:00 0HL5P4H5GAMGI [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T21:20:02.4293805-07:00 0HL5P4H5GAMGI [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:20:02.4303132-07:00 0HL5P4H5GAMGI [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:20:02.4303132-07:00 0HL5P4H5GAMGI [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T21:20:02.4313763-07:00 0HL5P4H5GAMGI [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 1.2807ms (afa2e885)
+2017-06-21T21:20:02.4313763-07:00 0HL5P4H5GAMGI [INF] Request finished in 2.5295ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T21:20:02.4563209-07:00 0HL5P4H5GAMGJ [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.css?v=K23JgRgXvMWE1kAvN9uLrE0FmZ_YkJV4OeYuFv30gKA   (e5be5b71)
+2017-06-21T21:20:02.4645267-07:00 0HL5P4H5GAMGK [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=b6-YZvJ5Az_A8QhdTI3PMJx7nJUNgRLw6eBwqmxXqCw   (e5be5b71)
+2017-06-21T21:20:02.4683185-07:00 0HL5P4H5GAMGL [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.js?v=keSSCGtO5UnHKGzsYZ6G9BvJnWQjEmRQX0b7OwnBNls   (e5be5b71)
+2017-06-21T21:20:02.4903401-07:00 0HL5P4H5GAMGJ [INF] Sending file. Request path: '"/dist/vendor.css"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.css"' (27b0a520)
+2017-06-21T21:20:02.5014828-07:00 0HL5P4H5GAMGL [INF] Sending file. Request path: '"/dist/vendor.js"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.js"' (27b0a520)
+2017-06-21T21:20:02.6483249-07:00 0HL5P4H5GAMGJ [INF] Request finished in 193.0283ms 200 text/css (15c52c40)
+2017-06-21T21:20:02.9083592-07:00 0HL5P4H5GAMGL [INF] Request finished in 440.2868ms 200 application/javascript (15c52c40)
+2017-06-21T21:20:03.0834814-07:00 0HL5P4H5GAMGK [INF] Request finished in 618.8404ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:20:08.5357583-07:00 0HL5P4H5GAMGM [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr   (e5be5b71)
+2017-06-21T21:20:14.7551175-07:00 0HL5P4H5GAMGN [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/tryCatch.js.map   (e5be5b71)
+2017-06-21T21:20:14.7583891-07:00 0HL5P4H5GAMGO [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js.map   (e5be5b71)
+2017-06-21T21:20:14.7740082-07:00 0HL5P4H5GAMGN [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:20:14.7820457-07:00 0HL5P4H5GAMGN [INF] Request finished in 27.0194ms 404  (15c52c40)
+2017-06-21T21:20:15.2101410-07:00 0HL5P4H5GAMGO [INF] Request finished in 452.4819ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:21:25.2760858-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:21:28.6690435-07:00  [INF] webpack built f29bb68220da5e578819 in 3335ms (fee9c2f7)
+2017-06-21T21:21:28.7756169-07:00 0HL5P4H5GAMGP [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/c1555a220f6c635ec159.hot-update.json   (e5be5b71)
+2017-06-21T21:21:28.8604849-07:00 0HL5P4H5GAMGP [INF] Request finished in 86.3107ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:21:28.8985933-07:00 0HL5P4H5GAMGQ [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/0.c1555a220f6c635ec159.hot-update.js   (e5be5b71)
+2017-06-21T21:21:28.9263879-07:00 0HL5P4H5GAMGQ [INF] Request finished in 39.4492ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:21:28.9687235-07:00 0HL5P4H5GAMGR [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/0.c1555a220f6c635ec159.hot-update.js.map   (e5be5b71)
+2017-06-21T21:21:28.9902994-07:00 0HL5P4H5GAMGR [INF] Request finished in 22.8673ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:21:29.0993419-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:21:29.2093445-07:00 0HL5P4H5GAMGS [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/c1555a220f6c635ec159.hot-update.json   (e5be5b71)
+2017-06-21T21:21:29.2693327-07:00 0HL5P4H5GAMGS [INF] Request finished in 78.7654ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:21:29.3123411-07:00 0HL5P4H5GAMGT [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/0.c1555a220f6c635ec159.hot-update.js   (e5be5b71)
+2017-06-21T21:21:29.3293252-07:00 0HL5P4H5GAMGT [INF] Request finished in 17.6813ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:21:30.6315249-07:00  [INF] webpack built f29bb68220da5e578819 in 1468ms (4da06ef9)
+2017-06-21T21:21:36.3118658-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:21:39.8784124-07:00  [INF] webpack built cb073d568737a74c1c3c in 3526ms (d4608c30)
+2017-06-21T21:21:41.4432989-07:00  [INF] webpack building... (478286db)
+2017-06-21T21:21:43.7482774-07:00  [INF] webpack built f41505febed555324c2e in 2267ms (5067841b)
+2017-06-21T21:22:02.3563233-07:00 0HL5P4H5GAMGU [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T21:22:02.3563233-07:00 0HL5P4H5GAMGU [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:22:02.3572181-07:00 0HL5P4H5GAMGU [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:02.3572181-07:00 0HL5P4H5GAMGU [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T21:22:02.5772386-07:00 0HL5P4H5GAMGU [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 219.9972ms (afa2e885)
+2017-06-21T21:22:02.5772386-07:00 0HL5P4H5GAMGU [INF] Request finished in 221.3495ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T21:22:02.6484829-07:00 0HL5P4H5GAMGV [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.js?v=keSSCGtO5UnHKGzsYZ6G9BvJnWQjEmRQX0b7OwnBNls   (e5be5b71)
+2017-06-21T21:22:02.6632898-07:00 0HL5P4H5GAMH0 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=-ygz_Ou3stdjW9uq-4SRRay_n33PtC7xe3K_IJZ2izU   (e5be5b71)
+2017-06-21T21:22:02.6632898-07:00 0HL5P4H5GAMH1 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.css?v=K23JgRgXvMWE1kAvN9uLrE0FmZ_YkJV4OeYuFv30gKA   (e5be5b71)
+2017-06-21T21:22:02.7114695-07:00 0HL5P4H5GAMGV [INF] Sending file. Request path: '"/dist/vendor.js"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.js"' (27b0a520)
+2017-06-21T21:22:02.7512349-07:00 0HL5P4H5GAMH1 [INF] Sending file. Request path: '"/dist/vendor.css"'. Physical path: '"C:\TFS\RPS Dev\EzInsurance\Web\wwwroot\dist\vendor.css"' (27b0a520)
+2017-06-21T21:22:02.8002640-07:00 0HL5P4H5GAMH1 [INF] Request finished in 136.8505ms 200 text/css (15c52c40)
+2017-06-21T21:22:03.1764169-07:00 0HL5P4H5GAMGV [INF] Request finished in 527.6199ms 200 application/javascript (15c52c40)
+2017-06-21T21:22:03.6363430-07:00 0HL5P4H5GAMH0 [INF] Request finished in 973.1824ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:22:08.2995561-07:00 0HL5P4H5GAMH2 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/tryCatch.js.map   (e5be5b71)
+2017-06-21T21:22:08.3036457-07:00 0HL5P4H5GAMH3 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js.map   (e5be5b71)
+2017-06-21T21:22:08.3197994-07:00 0HL5P4H5GAMH2 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:22:08.3208068-07:00 0HL5P4H5GAMH2 [INF] Request finished in 21.6967ms 404  (15c52c40)
+2017-06-21T21:22:08.6145878-07:00 0HL5P4H5GAMH4 [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr   (e5be5b71)
+2017-06-21T21:22:09.2186885-07:00 0HL5P4H5GAMH3 [INF] Request finished in 913.7193ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-06-21T21:22:20.9833127-07:00 0HL5P4H5GAMH5 [INF] Request starting HTTP/1.1 POST http://localhost:5077/connect/token application/x-www-form-urlencoded 158 (e5be5b71)
+2017-06-21T21:22:20.9833127-07:00 0HL5P4H5GAMH5 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:22:21.2807942-07:00 0HL5P4H5GAMH5 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin@ezinsurance.com\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email profile offline_access roles\",
+  \"resource\": \"http://localhost:5077\"
+}". (ebc01284)
+2017-06-21T21:22:21.3063511-07:00 0HL5P4H5GAMH5 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2017-06-21T21:22:21.3078626-07:00 0HL5P4H5GAMH5 [INF] The token request was successfully validated. (d7e51e65)
+2017-06-21T21:22:21.3183946-07:00 0HL5P4H5GAMH5 [DBG] The default token request handling was skipped from user code. (72afae05)
+2017-06-21T21:22:21.4555375-07:00 0HL5P4H5GAMH5 [INF] Executing action method "EzInsurance.Web.Controllers.AuthorizationController.Exchange (EzInsurance.Web)" with arguments (["{
+  \"username\": \"admin@ezinsurance.com\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email profile offline_access roles\",
+  \"resource\": \"http://localhost:5077\"
+}"]) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:21.7983594-07:00 0HL5P4H5GAMH5 [INF] Executed DbCommand (85ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0 (6438bdd5)
+2017-06-21T21:22:22.2354782-07:00 0HL5P4H5GAMH5 [INF] Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (6438bdd5)
+2017-06-21T21:22:22.2836201-07:00 0HL5P4H5GAMH5 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0 (6438bdd5)
+2017-06-21T21:22:22.3664748-07:00 0HL5P4H5GAMH5 [INF] Executed DbCommand (7ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0 (6438bdd5)
+2017-06-21T21:22:22.4163837-07:00 0HL5P4H5GAMH5 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0 (6438bdd5)
+2017-06-21T21:22:22.4526998-07:00 0HL5P4H5GAMH5 [INF] Executing SignInResult with authentication scheme ("ASOS") and the following principal: "System.Security.Claims.ClaimsPrincipal". (f8bf0a82)
+2017-06-21T21:22:22.5315229-07:00 0HL5P4H5GAMH5 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2017-06-21T21:22:22.5326105-07:00 0HL5P4H5GAMH5 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2017-06-21T21:22:22.5326105-07:00 0HL5P4H5GAMH5 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2017-06-21T21:22:22.5326105-07:00 0HL5P4H5GAMH5 [DBG] '"jobtitle"' was excluded from the access token claims. (ed8f369e)
+2017-06-21T21:22:22.5326105-07:00 0HL5P4H5GAMH5 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2017-06-21T21:22:22.5326105-07:00 0HL5P4H5GAMH5 [DBG] '"configuration"' was excluded from the access token claims. (ed8f369e)
+2017-06-21T21:22:23.0154703-07:00 0HL5P4H5GAMH5 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OpenIddictTokens] ([Id], [ApplicationId], [AuthorizationId], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4); (6438bdd5)
+2017-06-21T21:22:23.0636655-07:00 0HL5P4H5GAMH5 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2017-06-21T21:22:23.1087989-07:00 0HL5P4H5GAMH5 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2017-06-21T21:22:23.1824124-07:00 0HL5P4H5GAMH5 [INF] AuthenticationScheme: "ASOS" signed in. (c66dd7e7)
+2017-06-21T21:22:23.1824124-07:00 0HL5P4H5GAMH5 [INF] Executed action "EzInsurance.Web.Controllers.AuthorizationController.Exchange (EzInsurance.Web)" in 1855.4974ms (afa2e885)
+2017-06-21T21:22:23.2044556-07:00 0HL5P4H5GAMH5 [INF] Request finished in 2221.6782ms 200 application/json;charset=UTF-8 (15c52c40)
+2017-06-21T21:22:23.4697846-07:00 0HL5P4H5GAMH6 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T21:22:23.5134294-07:00 0HL5P4H5GAMH6 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-21T21:22:23.5147659-07:00 0HL5P4H5GAMH6 [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:23.5199179-07:00 0HL5P4H5GAMH6 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt]
+FROM [Policies] AS [p] (6438bdd5)
+2017-06-21T21:22:23.5204292-07:00 0HL5P4H5GAMH6 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:22:23.5204292-07:00 0HL5P4H5GAMH6 [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" in 6.4438ms (afa2e885)
+2017-06-21T21:22:23.5204292-07:00 0HL5P4H5GAMH6 [INF] Request finished in 51.4034ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:22:23.5474296-07:00 0HL5P4H5GAMH7 [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/riskconstructiontypes   (e5be5b71)
+2017-06-21T21:22:23.5564552-07:00 0HL5P4H5GAMH7 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-21T21:22:23.5584475-07:00 0HL5P4H5GAMH7 [INF] Executing action method "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:23.5996295-07:00 0HL5P4H5GAMH7 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Name]
+FROM [RiskConstructionTypes] AS [r] (6438bdd5)
+2017-06-21T21:22:23.6006235-07:00 0HL5P4H5GAMH7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:22:23.6006235-07:00 0HL5P4H5GAMH7 [INF] Executed action "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" in 43.1146ms (afa2e885)
+2017-06-21T21:22:23.6006235-07:00 0HL5P4H5GAMH7 [INF] Request finished in 69.9026ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:22:46.9648685-07:00 0HL5P4H5GAMH8 [INF] Request starting HTTP/1.1 GET http://localhost:5077/policies   (e5be5b71)
+2017-06-21T21:22:46.9658873-07:00 0HL5P4H5GAMH8 [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:22:46.9658873-07:00 0HL5P4H5GAMH8 [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:46.9658873-07:00 0HL5P4H5GAMH8 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-21T21:22:46.9658873-07:00 0HL5P4H5GAMH8 [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 0.8813ms (afa2e885)
+2017-06-21T21:22:46.9658873-07:00 0HL5P4H5GAMH8 [INF] Request finished in 2.0547ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-21T21:22:47.0248799-07:00 0HL5P4H5GAMH9 [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.css?v=K23JgRgXvMWE1kAvN9uLrE0FmZ_YkJV4OeYuFv30gKA   (e5be5b71)
+2017-06-21T21:22:47.0267873-07:00 0HL5P4H5GAMHA [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/vendor.js?v=keSSCGtO5UnHKGzsYZ6G9BvJnWQjEmRQX0b7OwnBNls   (e5be5b71)
+2017-06-21T21:22:47.0519958-07:00 0HL5P4H5GAMH9 [INF] The file "/dist/vendor.css" was not modified (f1f8d725)
+2017-06-21T21:22:47.0519958-07:00 0HL5P4H5GAMHA [INF] The file "/dist/vendor.js" was not modified (f1f8d725)
+2017-06-21T21:22:47.0577913-07:00 0HL5P4H5GAMHA [INF] Request finished in 31.8032ms 304 application/javascript (15c52c40)
+2017-06-21T21:22:47.0588351-07:00 0HL5P4H5GAMH9 [INF] Request finished in 33.6323ms 304 text/css (15c52c40)
+2017-06-21T21:22:47.1778048-07:00 0HL5P4H5GAMHB [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=-ygz_Ou3stdjW9uq-4SRRay_n33PtC7xe3K_IJZ2izU   (e5be5b71)
+2017-06-21T21:22:47.6419782-07:00 0HL5P4H5GAMHB [INF] Request finished in 464.0944ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-21T21:22:47.7839930-07:00 0HL5P4H5GAMHC [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/tryCatch.js.map   (e5be5b71)
+2017-06-21T21:22:47.8908406-07:00 0HL5P4H5GAMHC [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-21T21:22:47.8908406-07:00 0HL5P4H5GAMHC [INF] Request finished in 108.1809ms 404  (15c52c40)
+2017-06-21T21:22:52.2112736-07:00 0HL5P4H5GAMHD [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js.map   (e5be5b71)
+2017-06-21T21:22:52.4981173-07:00 0HL5P4H5GAMHE [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/policies   (e5be5b71)
+2017-06-21T21:22:52.4981173-07:00 0HL5P4H5GAMHE [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-21T21:22:52.4991049-07:00 0HL5P4H5GAMHE [INF] Executing action method "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:52.5072590-07:00 0HL5P4H5GAMHE [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedByUserId], [p].[DateCreated], [p].[DateModified], [p].[EffectiveDate], [p].[ExpirationDate], [p].[ModifiedByUserId], [p].[Number], [p].[PrimaryInsuredAddressId], [p].[PrimaryInsuredMailingAddressId], [p].[PrimaryInsuredName], [p].[RiskAddressId], [p].[RiskConstructionTypeId], [p].[RiskYearBuilt]
+FROM [Policies] AS [p] (6438bdd5)
+2017-06-21T21:22:52.5111452-07:00 0HL5P4H5GAMHF [INF] Request starting HTTP/1.1 GET http://localhost:5077/api/riskconstructiontypes   (e5be5b71)
+2017-06-21T21:22:52.5111452-07:00 0HL5P4H5GAMHE [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:22:52.5132355-07:00 0HL5P4H5GAMHF [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-06-21T21:22:52.5132355-07:00 0HL5P4H5GAMHE [INF] Executed action "EzInsurance.Web.Controllers.PoliciesController.Get (EzInsurance.Web)" in 13.9243ms (afa2e885)
+2017-06-21T21:22:52.5142346-07:00 0HL5P4H5GAMHE [INF] Request finished in 16.0715ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:22:52.5142346-07:00 0HL5P4H5GAMHF [INF] Executing action method "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-21T21:22:52.5163549-07:00 0HL5P4H5GAMHF [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Description], [r].[Name]
+FROM [RiskConstructionTypes] AS [r] (6438bdd5)
+2017-06-21T21:22:52.5171098-07:00 0HL5P4H5GAMHF [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-21T21:22:52.5415006-07:00 0HL5P4H5GAMHF [INF] Executed action "EzInsurance.Web.Controllers.RiskConstructionTypesController.Get (EzInsurance.Web)" in 27.3848ms (afa2e885)
+2017-06-21T21:22:52.5415006-07:00 0HL5P4H5GAMHF [INF] Request finished in 33.3159ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-21T21:22:52.9212054-07:00 0HL5P4H5GAMHG [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr   (e5be5b71)
+2017-06-21T21:22:53.3401601-07:00 0HL5P4H5GAMHD [INF] Request finished in 1129.592ms 200 application/json; charset=UTF-8 (15c52c40)

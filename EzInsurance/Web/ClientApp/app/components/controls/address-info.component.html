@@ -1,0 +1,99 @@
+﻿<div>
+    <form *ngIf="formResetToggle" [attr.autocomplete]="isGeneralEditor ? NaN : null" class="form-horizontal" name="addressInfoForm" #f="ngForm" novalidate
+          (ngSubmit)="f.form.valid ? save() :
+
+          (!street1.valid && showErrorAlert('Street 1 is required', 'Please enter a street name'));
+
+          (!city.valid && showErrorAlert('City is required', 'Please enter a city name'));
+
+          (!state.valid && showErrorAlert('State is required', 'Please enter a state name'));
+
+          (!zipCode.valid && showErrorAlert('ZipCode is required', 'Please enter a zipcode'));
+
+          (zipCode.errors?.pattern && showErrorAlert('Invalid Zip Code', 'Please enter a valid zip code'));
+
+       ">
+
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label">{{addressType}} Address</label>
+
+            <!-- Street1 -->
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{address.street1}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly" [ngClass]="{'has-success': formSubmitted && street1.valid, 'has-error' : formSubmitted && !street1.valid}">
+                <input type="text" attr.id="street1-{{uniqueId}}" name="street1" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Street 1"
+                       class="form-control" [(ngModel)]="addressEdit.street1" #street1="ngModel" required />
+                <span *ngIf="showValidationErrors && formSubmitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': street1.valid, 'glyphicon-remove' : !street1.valid}"></span>
+                <span *ngIf="showValidationErrors && formSubmitted && !street1.valid" class="errorMessage">
+                    {{'address.editor.Street1Required' | translate}}
+                </span>
+            </div>
+        </div>
+
+        <!-- Street2 -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="street2-{{uniqueId}}"></label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{address.street2}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly" [ngClass]="{'has-success': formSubmitted && street2.valid, 'has-error' : formSubmitted && !street2.valid}">
+                <input type="text" attr.id="street2-{{uniqueId}}" name="street2" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Street 2"
+                       class="form-control" [(ngModel)]="addressEdit.street2" #street2="ngModel" />
+                <span *ngIf="showValidationErrors && formSubmitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': street2.valid, 'glyphicon-remove' : !street2.valid}"></span>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <!-- City -->
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="city-{{uniqueId}}"></label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{address.city}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly" [ngClass]="{'has-success': formSubmitted && city.valid, 'has-error' : formSubmitted && !city.valid}">
+                <input type="text" attr.id="city-{{uniqueId}}" name="city" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="City"
+                       class="form-control" [(ngModel)]="addressEdit.city" #city="ngModel" required />
+                <span *ngIf="showValidationErrors && formSubmitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': city.valid, 'glyphicon-remove' : !city.valid}"></span>
+                <span *ngIf="showValidationErrors && formSubmitted && !city.valid" class="errorMessage">
+                    {{'address.editor.CityRequired' | translate}}
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <!-- State -->
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="state-{{uniqueId}}"></label>
+            <div *ngIf="!isEditMode" [class.col-md-1]="isViewOnly" [class.col-md-1]="!isViewOnly">
+                <p class="form-control-static">{{address.state}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-2]="isViewOnly" [class.col-md-2]="!isViewOnly" [ngClass]="{'has-success': formSubmitted && state.valid, 'has-error' : formSubmitted && !state.valid}">
+                <input type="text" attr.id="state-{{uniqueId}}" name="state" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="State"
+                       class="form-control" [(ngModel)]="addressEdit.state" #state="ngModel" required />
+                <span *ngIf="showValidationErrors && formSubmitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': state.valid, 'glyphicon-remove' : !state.valid}"></span>
+                <span *ngIf="showValidationErrors && formSubmitted && !state.valid" class="errorMessage">
+                    {{'address.editor.StateRequired' | translate}}
+                </span>
+            </div>
+
+            <!-- ZipCode -->
+            <div *ngIf="!isEditMode" [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly">
+                <p class="form-control-static">{{address.zipCode}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" [ngClass]="{'has-success': formSubmitted && zipCode.valid, 'has-error' : formSubmitted && !zipCode.valid}">
+                <input type="text" attr.id="zipCode-{{uniqueId}}" name="zipCode" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Zip Code"
+                       class="form-control" [(ngModel)]="addressEdit.zipCode" #zipCode="ngModel" required pattern="^\d{5}(?:[-\s]\d{4})?$" />
+                <span *ngIf="showValidationErrors && formSubmitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': zipCode.valid, 'glyphicon-remove' : !zipCode.valid}"></span>
+                <span *ngIf="showValidationErrors && formSubmitted && !zipCode.valid" class="errorMessage">
+                    {{'address.editor.ZipCodeRequired' | translate}}
+                </span>
+                <span *ngIf="showValidationErrors && f.submitted && zipCode.errors?.pattern" class="errorMessage">
+                    {{'address.editor.InvalidZipCode' | translate}}
+                </span>
+            </div>
+            <div class="col-md-4">
+                <!-- Extra Space -->
+            </div>
+        </div>
+
+    </form>
+</div>

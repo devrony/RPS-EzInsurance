@@ -1,0 +1,164 @@
+﻿<div>
+    <form *ngIf="formResetToggle" [attr.autocomplete]="isGeneralEditor ? NaN : null" class="form-horizontal" name="policyInfoForm" #f="ngForm" novalidate
+          (ngSubmit)="f.form.valid ? save() :
+
+          (!policyNumber.valid && showErrorAlert('Policy number is required', 'Please enter a policy number (minimum of 2 and maximum of 30 characters)'));
+
+          (!primaryInsuredName.valid && showErrorAlert('Primary insured name is required', 'Please enter a primary insured name (minimum of 2 and maximum of 75 characters)'));
+
+          (!riskYearBuilt.valid && showErrorAlert('Risk year built is required', 'Please enter a 4-digit year number'));
+
+          (!effectiveDatepicker.valid && showErrorAlert('Policy effective date is required', 'Please enter the effective date'));
+
+          (!expirationDatepicker.valid && showErrorAlert('Policy expiration date is required', 'Please enter the expiration date'));
+       ">
+
+        <!-- Policy Number -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="policyNumber-{{uniqueId}}">{{'policies.editor.PolicyNumber' | translate}}</label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{policy.Number}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly" [ngClass]="{'has-success': f.submitted && policyNumber.valid, 'has-error' : f.submitted && !policyNumber.valid}">
+                <input type="text" attr.id="policyNumber-{{uniqueId}}" name="policyNumber" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Enter policy number"
+                       class="form-control" [(ngModel)]="policyEdit.number" #policyNumber="ngModel" required minlength="3" maxlength="30" />
+                <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': policyNumber.valid, 'glyphicon-remove' : !policyNumber.valid}"></span>
+                <span *ngIf="showValidationErrors && f.submitted && !policyNumber.valid" class="errorMessage">
+                    {{'policies.editor.PolicyNumberRequired' | translate}}
+                </span>
+            </div>
+        </div>
+
+        <!-- Primary Insured Name -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="primaryInsuredName-{{uniqueId}}">{{'policies.editor.PrimaryInsuredName' | translate}}</label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{policy.primaryInsureName}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly" [ngClass]="{'has-success': f.submitted && primaryInsuredName.valid, 'has-error' : f.submitted && !primaryInsuredName.valid}">
+                <input type="text" attr.id="primaryInsuredName-{{uniqueId}}" name="primaryInsuredName" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Enter primary insured name"
+                       class="form-control" [(ngModel)]="policyEdit.primaryInsuredName" #primaryInsuredName="ngModel" required minlength="3" maxlength="75" />
+                <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': primaryInsuredName.valid, 'glyphicon-remove' : !primaryInsuredName.valid}"></span>
+                <span *ngIf="showValidationErrors && f.submitted && !primaryInsuredName.valid" class="errorMessage">
+                    {{'policies.editor.PrimaryInsuredNameRequired' | translate}}
+                </span>
+            </div>
+        </div>
+
+        <!-- Effective Date -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="effectiveDatepicker-{{uniqueId}}">{{'policies.editor.EffectiveDate' | translate}}</label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{policy.effectiveDate}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-4]="isViewOnly" [class.col-md-4]="!isViewOnly" [ngClass]="{'has-success': f.submitted && effectiveDatepicker.valid, 'has-error' : f.submitted && !effectiveDatepicker.valid}">
+
+                <input type="text" attr.id="effectiveDatepicker-{{uniqueId}}" name="effectiveDatepicker" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Enter effective date"
+                       bootstrapDatepicker #effectiveDatepicker="bootstrap-datepicker"
+                       class="form-control" [(ngModel)]="policyEdit.effectiveDate"
+                       #effectiveDatepicker="ngModel" required minlength="7" maxlength="10" />
+
+            </div>
+            <div class="col-md-5">
+                <!-- Extra Space -->
+            </div>
+        </div>
+
+
+        <!-- Expiration Date -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="expirationDatepicker-{{uniqueId}}">{{'policies.editor.ExpirationDate' | translate}}</label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{policy.expirationDate}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-4]="isViewOnly" [class.col-md-4]="!isViewOnly" [ngClass]="{'has-success': f.submitted && expirationDatepicker.valid, 'has-error' : f.submitted && !expirationDatepicker.valid}">
+
+                <input type="text" attr.id="expirationDatepicker-{{uniqueId}}" name="expirationDatepicker" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Enter expiration date"
+                       bootstrapDatepicker #expirationDatepicker="bootstrap-datepicker"
+                       class="form-control" [(ngModel)]="policyEdit.expirationDate"
+                       #expirationDatepicker="ngModel" required minlength="7" maxlength="10" />
+
+            </div>
+            <div class="col-md-5">
+                <!-- Extra Space -->
+            </div>
+        </div>
+
+        <!-- Risk Year Built -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="riskYearBuilt-{{uniqueId}}">{{'policies.editor.RiskYearBuilt' | translate}}</label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{policy.riskYearBuilt}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly" [ngClass]="{'has-success': f.submitted && riskYearBuilt.valid, 'has-error' : f.submitted && !riskYearBuilt.valid}">
+                <input type="text" attr.id="riskYearBuilt-{{uniqueId}}" name="riskYearBuilt" [attr.autocomplete]="isGeneralEditor ? new-policy : null" placeholder="Enter Risk Year built"
+                       class="form-control" [(ngModel)]="policyEdit.riskYearBuilt" #riskYearBuilt="ngModel" required maxlength="10" />
+                <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': riskYearBuilt.valid, 'glyphicon-remove' : !riskYearBuilt.valid}"></span>
+                <span *ngIf="showValidationErrors && f.submitted && !riskYearBuilt.valid" class="errorMessage">
+                    {{'policies.editor.RiskYearBuiltRequired' | translate}}
+                </span>
+            </div>
+        </div>
+
+        <!-- Risk Construction Type -->
+        <div class="form-group has-feedback">
+            <label [class.col-md-3]="isViewOnly" [class.col-md-3]="!isViewOnly" class="control-label" for="riskConstructionTypeId-{{uniqueId}}">{{'policies.editor.RiskConstructionTypeId' | translate}}</label>
+            <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+                <p class="form-control-static">{{policy.riskConstructionType.Name}}</p>
+            </div>
+            <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-9]="!isViewOnly">
+
+                <select attr.id="riskConstructionTypeId-{{uniqueId}}" name="riskConstructionTypeId" #riskConstructionTypeId="ngModel" [(ngModel)]="policyEdit.riskConstructionTypeId"
+                        #riskConstructionTypeSelector="bootstrap-select" bootstrapSelect class="selectpicker form-control">
+                    <option *ngFor="let riskType of riskConstructionTypes" [value]="riskType.id">
+                        {{ riskType.name }}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Primary Insured Address Components -->
+        <div class="row">
+            <div class="col-md-12">
+                <address-info [addressType]="'Primary'" [isEditMode]="true" [showValidationErrors]="showValidationErrors" [formSubmitted]="f.submitted" [addressEdit]="policy.primaryInsuredAddress"></address-info>
+            </div>
+        </div>
+
+        <!-- Mailing Address Components -->
+        <div class="row">
+            <div class="col-md-12">
+                <address-info [addressType]="'Mailing'" [isEditMode]="true" [showValidationErrors]="showValidationErrors" [formSubmitted]="f.submitted" [addressEdit]="policy.primaryInsuredMailingAddress"></address-info>
+            </div>
+        </div>
+
+        <!-- Risk Address Components -->
+        <div class="row">
+            <div class="col-md-12">
+                <address-info [addressType]="'Risk'" [isEditMode]="true" [showValidationErrors]="showValidationErrors" [formSubmitted]="f.submitted" [addressEdit]="policy.riskAddress"></address-info>
+            </div>
+        </div>
+
+
+        <div *ngIf="!isViewOnly" class="row">
+            <div class="col-md-12">
+                <hr [class.last-separator-hr]="!isEditMode" [class.edit-last-separator-hr]="isEditMode" />
+            </div>
+        </div>
+
+        <div *ngIf="!isViewOnly" class="form-group">
+            
+            <div class="col-sm-7">
+                <div class="pull-right">
+                    <button *ngIf="!isEditMode && isGeneralEditor" type="button" (click)="close()" class="btn btn-default"><i class='fa fa-close'></i> {{'policies.editor.Close' | translate}}</button>
+                    <button *ngIf="!isEditMode && !isGeneralEditor" type="button" (click)="edit()" class="btn btn-default"><i class='fa fa-edit'></i> {{'policies.editor.Edit' | translate}}</button>
+                    <button *ngIf="isEditMode" type="button" (click)="cancel()" class="btn btn-danger" [disabled]="isSaving"><i class='fa fa-times'></i> {{'policies.editor.Cancel' | translate}}</button>
+                    <button *ngIf="isEditMode" type="submit" class="btn btn-primary" [disabled]="isSaving">
+                        <i *ngIf="!isSaving" class='fa fa-save'></i><i *ngIf="isSaving" class='fa fa-circle-o-notch fa-spin'></i> {{isSaving ? ('policies.editor.Saving' | translate) : ('policies.editor.Save' | translate)}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+    </form>
+</div>
