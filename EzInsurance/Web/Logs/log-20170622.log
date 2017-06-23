@@ -4579,3 +4579,37 @@ WHERE [r].[Id] IN (N'1dcba697-e408-417c-bf94-de5ee96b293e', N'c11366fc-cef8-484a
 2017-06-22T19:12:36.8534498-07:00 0HL5PRK5MH2D9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
 2017-06-22T19:12:36.8690247-07:00 0HL5PRK5MH2D9 [INF] Executed action "EzInsurance.Web.Controllers.AccountController.GetUsers (EzInsurance.Web)" in 591.1261ms (afa2e885)
 2017-06-22T19:12:36.8690247-07:00 0HL5PRK5MH2D9 [INF] Request finished in 624.973ms 200 application/json; charset=utf-8 (15c52c40)
+2017-06-22T19:24:42.5934928-07:00  [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-22T19:24:42.6256429-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory'); (6438bdd5)
+2017-06-22T19:24:42.6562938-07:00  [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-06-22T19:24:43.5473129-07:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-22T19:24:43.5784015-07:00  [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RiskConstructionTypes] AS [r])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-22T19:24:44.1404234-07:00 0HL5PRS1CF6BL [INF] Request starting HTTP/1.1 GET http://localhost:5077/   (e5be5b71)
+2017-06-22T19:24:44.1404234-07:00 0HL5PRS1CF6BK [INF] Request starting HTTP/1.1 DEBUG http://localhost:5077/  0 (e5be5b71)
+2017-06-22T19:24:44.3122804-07:00 0HL5PRS1CF6BL [DBG] Authentication was skipped because no bearer token was received. (9de85986)
+2017-06-22T19:24:44.3599280-07:00 0HL5PRS1CF6BK [INF] Request finished in 232.2492ms 200  (15c52c40)
+2017-06-22T19:24:45.2342691-07:00 0HL5PRS1CF6BL [INF] Executing action method "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-06-22T19:24:49.5422707-07:00 0HL5PRS1CF6BL [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-06-22T19:24:50.4013893-07:00 0HL5PRS1CF6BL [INF] Executed action "EzInsurance.Web.Controllers.HomeController.Index (EzInsurance.Web)" in 5268.6238ms (afa2e885)
+2017-06-22T19:24:50.4013893-07:00 0HL5PRS1CF6BL [INF] Request finished in 6308.7604ms 200 text/html; charset=utf-8 (15c52c40)
+2017-06-22T19:24:50.4326336-07:00 0HL5PRS1CF6BM [INF] Request starting HTTP/1.1 GET http://localhost:5077/dist/main-client.js?v=K-O_wvM4NshGahipjCEJPVe4mDVBvR7lGrdLJoi3v5c   (e5be5b71)
+2017-06-22T19:24:58.5358818-07:00  [INF] webpack built fe4cce84687b1de5c3d6 in 19693ms (f04b8b01)
+2017-06-22T19:24:58.9889291-07:00 0HL5PRS1CF6BM [INF] Request finished in 8559.8498ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-06-22T19:24:59.2545595-07:00 0HL5PRS1CF6BN [INF] Request starting HTTP/1.1 GET http://localhost:5077/__webpack_hmr?lastEventId=&r=158921754618976   (e5be5b71)
